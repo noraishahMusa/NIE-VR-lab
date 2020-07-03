@@ -103,7 +103,6 @@ public class TableSpace : MonoBehaviour
         Vector2 v = new Vector2(collMax.x - collMin.x, collMax.z - collMin.z);
         boundsToTextRatio = new Vector2(t.width/v.x, t.height/v.y);
         clothArea = clothWidth * clothHeight;
-        Debug.Log("CompleteClothInit");
     }
 
     void ChangeTextureColor(Collider _other)
