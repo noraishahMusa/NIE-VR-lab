@@ -5,16 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class switchscene : MonoBehaviour
 {
-   public void playGame() 
+   public void playGame1() 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+               
     }
-    public void home()
+    public void playGame2()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 0);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
+    }
+    public void back()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        
     }
 }
