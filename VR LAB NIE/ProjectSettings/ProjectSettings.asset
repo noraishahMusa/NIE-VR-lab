@@ -310,9 +310,7 @@ PlayerSettings:
   m_BuildTargetVRSettings:
   - m_BuildTarget: Standalone
     m_Enabled: 1
-    m_Devices:
-    - None
-    - OpenVR
+    m_Devices: []
   - m_BuildTarget: Android
     m_Enabled: 0
     m_Devices: []
@@ -453,7 +451,6 @@ PlayerSettings:
   switchRatingsInt_9: 0
   switchRatingsInt_10: 0
   switchRatingsInt_11: 0
-  switchRatingsInt_12: 0
   switchLocalCommunicationIds_0: 
   switchLocalCommunicationIds_1: 
   switchLocalCommunicationIds_2: 
