@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab Scene_4.unity
     guid: acf8a0c1bab6a7943a2e5103b3a6a769
+  - enabled: 1
+    path: Assets/Scenes/Video Tutorial.unity
+    guid: c9f4d2563e061cc438ebb80aa10fcb3f
   m_configObjects: {}
