@@ -28,7 +28,6 @@ public class TableSpace : MonoBehaviour
         img = GetComponent<RawImage>();
         t = new Texture2D(128, 128, TextureFormat.RGB24,true);
         img.texture = t;
-        Debug.Log(t.height + " " + t.width);
         for (int y = 0; y < t.height; y++)
         {
             for (int x = 0; x < t.width; x++)
@@ -99,7 +98,6 @@ public class TableSpace : MonoBehaviour
     {
         collMax = coll.bounds.max;
         collMin = coll.bounds.min;
-        Debug.Log(collMax + " " + collMin);
         Vector2 v = new Vector2(collMax.x - collMin.x, collMax.z - collMin.z);
         boundsToTextRatio = new Vector2(t.width/v.x, t.height/v.y);
         clothArea = clothWidth * clothHeight;
