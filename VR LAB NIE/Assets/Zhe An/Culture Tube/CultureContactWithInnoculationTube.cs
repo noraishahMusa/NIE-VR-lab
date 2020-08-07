@@ -4,78 +4,73 @@ using VRTK;
 
 public class CultureContactWithInnoculationTube : MonoBehaviour
 {
-    private VRTK_InteractableObject interactableObject;
     private IEnumerator coroutine;
 
     [SerializeField]
     private Transform strikeRod;
+    [SerializeField]
+    private Renderer strikeRodTip;
+    [SerializeField]
+    private Transform strikeRodTipTrans;
 
     [SerializeField]
     private float collectAlgaeDuration = 2.0f;
 
+    [SerializeField]
+    private Collider coll;
+
+    private bool isHoldingStrikeRod;
+    private float timer;
+    private Color strikeRodTipOriginalColor;
+
     private void Awake()
     {
-        interactableObject = GetComponent<VRTK_InteractableObject>();
-
-
-        interactableObject.InteractableObjectDisabled += WhenDisabled;
-        interactableObject.InteractableObjectEnabled += WhenEnabled;
+        strikeRodTipOriginalColor = strikeRodTip.material.color;
     }
 
-    private void WhenEnabled(object sender, InteractableObjectEventArgs e)
+    private void OnEnable()
     {
-        interactableObject.InteractableObjectNearTouched += TouchObject;
-        interactableObject.InteractableObjectNearUntouched += UntouchObject;
+        Debug.Log("culture tube is enabled");
+        isHoldingStrikeRod = false;
+        
     }
 
-
-
-    private void WhenDisabled(object sender, InteractableObjectEventArgs e)
+    private void Update()
     {
-        interactableObject.InteractableObjectNearTouched -= TouchObject;
-        interactableObject.InteractableObjectNearUntouched -= UntouchObject;
-    }
-
-    private void UntouchObject(object sender, InteractableObjectEventArgs e)
-    {
-        VRTK_InteractGrab iGrab = e.interactingObject.GetComponent<VRTK_InteractGrab>();
-        Debug.Log(iGrab.GetGrabbedObject().name);
-        if (iGrab.GetGrabbedObject().name == strikeRod.name)
+        if (isHoldingStrikeRod) return;
+        if (GetNameOfGrabObjects.leftGrabbedItem == strikeRod || GetNameOfGrabObjects.rightGrabbedItem == strikeRod)
         {
-            Debug.Log("rod is leaving fire");
-            if (coroutine != null)
+            Debug.Log("strike rod is held on");
+            coll.enabled = true;
+            isHoldingStrikeRod = true;
+        }
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log(other + " is colliding with culture tube" + strikeRodTipTrans);
+        if(other.transform == strikeRodTipTrans)
+        {
+            strikeRodTip.enabled = true;
+            strikeRodTip.material.color = Color.Lerp(strikeRodTipOriginalColor, Color.green, timer/2);
+            Debug.Log("strike rod is collided with");
+            timer += Time.deltaTime;
+            if (strikeRodTip.material.color == Color.green)
             {
-                StopCoroutine(coroutine);
+                Debug.Log("culture has been collected");
+                CultureCollected();
+                coll.enabled = false;
             }
         }
+
     }
 
-    private void TouchObject(object sender, InteractableObjectEventArgs e)
+    private void CultureCollected()
     {
-        VRTK_InteractGrab iGrab = e.interactingObject.GetComponent<VRTK_InteractGrab>();
+        FindObjectOfType<StepControl>().DoNextStep();
+        this.enabled = false;
 
-        GameObject obj = iGrab.GetGrabbedObject();
-        GameObject target = obj.transform.Find("inoculation loop/strike rod").gameObject;
-        ; Debug.Log(iGrab.GetGrabbedObject().name + " " + target);
-        if (obj.name == strikeRod.name)
-        {
-            Debug.Log("rod is entering fire");
-            coroutine = CollectAlgae(target);
-            StartCoroutine(coroutine);
-        }
-    }
-
-    private IEnumerator CollectAlgae(GameObject obj)
-    {
-        float t = 0;
-        //Material mat = obj.GetComponent<Renderer>().material;
-        //Color originalColor = mat.color;
-        while (t < collectAlgaeDuration)
-        {
-            t += 0.5f;
-            yield return new WaitForSeconds(0.5f);
-        }
-        Debug.Log("color has changed to red");
     }
 
 }

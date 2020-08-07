@@ -10,7 +10,7 @@ public class GloveInteraction : MonoBehaviour
     [SerializeField] private Material gloveMat;
     [SerializeField] private SkinnedMeshRenderer[] hands;
 
-    private void Awake()
+    private void OnEnable()
     {
         interactableObject = GetComponent<VRTK_InteractableObject>();
         interactableObject.InteractableObjectUsed += PutOnGlove;
@@ -23,5 +23,13 @@ public class GloveInteraction : MonoBehaviour
             hands[i].material = gloveMat;
         }
         this.gameObject.SetActive(false);
+
+        //GoToNextStepUsingStepControl//
+        GoToNextStep();
+    }
+
+    private void GoToNextStep()
+    {
+        FindObjectOfType<StepControl>().DoNextStep();
     }
 }

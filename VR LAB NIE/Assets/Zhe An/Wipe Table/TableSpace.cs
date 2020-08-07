@@ -7,15 +7,18 @@ public class TableSpace : MonoBehaviour
 {
     RawImage img;
     Texture2D t;
+    [SerializeField]Texture2D dirtyTexture;
     Collider coll;
     RectTransform rect;
+    Color clear;
 
     //for calculating cloth wipe area
     Vector3 collMax;
     Vector3 collMin;
-    int clothWidth = 10;
-    int clothHeight = 36;
+    int clothWidth = 20;
+    int clothHeight = 56;
     int clothArea;
+    int pixelAmt;
     Vector2 boundsToTextRatio;
 
     [SerializeField]
@@ -26,20 +29,19 @@ public class TableSpace : MonoBehaviour
         rect = GetComponentInParent<RectTransform>();
         coll = GetComponent<Collider>();
         img = GetComponent<RawImage>();
-        t = new Texture2D(128, 128, TextureFormat.RGB24,true);
-        img.texture = t;
+        clear = new Color(0, 0, 0, 0);
+        t = new Texture2D(dirtyTexture.width, dirtyTexture.height, TextureFormat.ARGB32, true);
         for (int y = 0; y < t.height; y++)
         {
             for (int x = 0; x < t.width; x++)
             {
-
-                Color color = Color.black;
-                t.SetPixel(x, y, color);
+                t.SetPixel(x, y, dirtyTexture.GetPixel(x,y));
             }
         }
         t.Apply();
-
-
+        img.texture = t;
+        pixelAmt = (int)(t.width / 20) * (int)(t.height / 20);
+        Debug.Log(pixelAmt + " " + t.width + " " + t.height);
         //For preparing cloth wipe action value
         InitiaiteClothCalculation();
 
@@ -50,11 +52,11 @@ public class TableSpace : MonoBehaviour
     {
         float cleanedCount = 0;
         hasZoneNotCovered = false;
-        for (int y = 0; y < t.height; y++)
+        for (int y = 0; y < t.height; y+=20)
         {
-            for (int x = 0; x < t.width; x++)
+            for (int x = 0; x < t.width; x+=20)
             {
-                if(t.GetPixel(x,y) != Color.black)
+                if(t.GetPixel(x,y) == clear)
                 {
                     cleanedCount++;
                     Debug.Log("area cleaned");
@@ -67,28 +69,29 @@ public class TableSpace : MonoBehaviour
             Debug.Log("All is black");
         } else
         {
-            float percent = (cleanedCount / (t.width * t.height)) * 100;
+            float percent = (cleanedCount / pixelAmt) * 100;
             Debug.Log(percent + " has been covered");
-            if(percent > 90)
+            if(percent > 45)
             {
-                Debug.Log(percent + " is greater than 90. Hence table is cleaned.");
+                Debug.Log(percent + " is greater than 50. Hence table is cleaned.");
+                //GoToNextStepUsingStepControl//
+                FindObjectOfType<StepControl>().DoNextStep();
             }
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            CheckAlpha();
-        }
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if(other.name == tissueTarget.name)
         {
             ChangeTextureColor(other);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == tissueTarget.name)
+        {
+            CheckAlpha();
         }
     }
 
@@ -113,11 +116,12 @@ public class TableSpace : MonoBehaviour
         Color[] colors = new Color[clothWidth*clothHeight];
         for(int i = 0; i < colors.Length; i++)
         {
-            colors[i] = Color.white;
+            colors[i] = clear;
         }
 
         t.SetPixels((int)final.x - clothWidth/2, (int)final.y - clothHeight/2, clothWidth, clothHeight, colors);
         t.Apply();
+        img.texture = t;
     }
 
 

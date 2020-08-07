@@ -16,6 +16,7 @@ public class BunsenBurnerControl : MonoBehaviour
 
     private VRTK_InteractableObject interactableObject;
     public bool isOn;
+    private bool firstTimeOn;
 
     private void Awake()
     {
@@ -50,6 +51,11 @@ public class BunsenBurnerControl : MonoBehaviour
             flame.Play();
             coroutine = StartBurnerAudio();
             StartCoroutine(coroutine);
+            if (!firstTimeOn)
+            {
+                FindObjectOfType<StepControl>().DoNextStep();
+                firstTimeOn = true;
+            }
         }
 
         else
