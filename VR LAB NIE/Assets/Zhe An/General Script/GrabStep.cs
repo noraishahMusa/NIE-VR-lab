@@ -8,6 +8,7 @@ public class GrabStep : MonoBehaviour
 {
     VRTK_InteractableObject interactableObj;
     [SerializeField] private bool doStepOnGrab, doStepOnUngrab;
+    bool hasDoneStep;
 
     private void Awake()
     {
@@ -24,10 +25,13 @@ public class GrabStep : MonoBehaviour
     {
         if (doStepOnGrab) interactableObj.InteractableObjectGrabbed -= DoNextStep;
         if (doStepOnUngrab) interactableObj.InteractableObjectUngrabbed -= DoNextStep;
+        hasDoneStep = false;
     }
 
     private void DoNextStep(object sender, InteractableObjectEventArgs e)
     {
+        if (hasDoneStep) return;
         FindObjectOfType<StepControl>().DoNextStep();
+        hasDoneStep = true;
     }
 }

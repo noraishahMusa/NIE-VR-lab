@@ -29,10 +29,9 @@ public class StepControl : MonoBehaviour
     {
         if (currStep.deactivateAfterDone) currStep.StopThisStep();
         if (processCanvas.enabled) return;
-        Debug.Log("do next step");
         stepCount++;
         currStep = steps[stepCount];
-        Invoke("OpenNextStepInstruction", 1.5f);
+        Invoke("OpenNextStepInstruction", 0.25f);
 
     }
 
@@ -41,7 +40,7 @@ public class StepControl : MonoBehaviour
         if (currStep.hasInstruction)
         {
             processCanvas.enabled = true;
-            processCanvas.instructionInCanvas.text = currStep.CurrInstructionSet();
+            processCanvas.instructionInCanvas.text = stepCount.ToString() + currStep.CurrInstructionSet();
             StartCoroutine(CarryOnGivingAdditionalInstruction());
         }
 
@@ -54,7 +53,7 @@ public class StepControl : MonoBehaviour
         //this step and next step is the same because there is additional instructions to be given.
         while (processCanvas.enabled)
         {
-            Debug.Log("next set of instruction is the same step so we are waiting to do next step immediately after the canvas panel is closed.");
+            //Debug.Log("next set of instruction is the same step so we are waiting to do next step immediately after the canvas panel is closed.");
             yield return null;
         }
 

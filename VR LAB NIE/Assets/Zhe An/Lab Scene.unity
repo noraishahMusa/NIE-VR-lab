@@ -1062,11 +1062,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
   tableCloth: {fileID: 0}
   bunsenBurner: {fileID: 0}
   strikingRod: {fileID: 0}
   cultureTube: {fileID: 0}
+  cultureContact: {fileID: 0}
   petridish: {fileID: 927222650}
+  petridishCover: {fileID: 957414239}
   petridishStrikePanel: {fileID: 0}
   burnerFire: {fileID: 0}
 --- !u!114 &63932115
@@ -1086,8 +1089,11 @@ MonoBehaviour:
     clicking on the grip button of the hand holding the tube.
   - Then, pick up the NA plate by touching it with the free hand and click the palm
     button.
+  - Pick up the NA plate by touching it with the free hand and click the palm button.
+  - Pick up the NA plate by touching it with the free hand and click the palm button.
+  - Pick up the NA plate by touching it with the free hand and click the palm button.
   hasInstruction: 0
-  deactivateAfterDone: 0
+  deactivateAfterDone: 1
 --- !u!1 &64909947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,7 +2872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293145758}
   m_LocalRotation: {x: -0, y: -0, z: 0.012580414, w: 0.9999209}
-  m_LocalPosition: {x: 0.063, y: -0.09799999, z: -0.007}
+  m_LocalPosition: {x: -0.082, y: -0.06, z: 0}
   m_LocalScale: {x: 0.37560695, y: 0.41339418, z: 0.008641072}
   m_Children: []
   m_Father: {fileID: 1037929357}
@@ -2889,7 +2895,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3b3b42404fefa8e4e860b57acdb908c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3009,6 +3015,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316672881}
   m_Mesh: {fileID: 8000448130964737621, guid: bea7a67f6443d26429af7deddb28fc2a, type: 3}
+--- !u!1 &317127729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317127730}
+  - component: {fileID: 317127731}
+  m_Layer: 0
+  m_Name: Step 30
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317127730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317127729}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 964778102}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &317127731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317127729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53eae7e3c08f0d345861b6fc01c9d7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionText:
+  - 'Continue to re-streak ZIG-ZAG for the last sectors of plates. '
+  hasInstruction: 0
+  deactivateAfterDone: 0
 --- !u!1001 &325366245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3205,13 +3258,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359863480}
-  m_LocalRotation: {x: -0, y: -0, z: -0.17228669, w: 0.98504686}
-  m_LocalPosition: {x: -0.166, y: 0.049000025, z: -0.0069999695}
+  m_LocalRotation: {x: -0, y: -0, z: 0.15128368, w: 0.9884904}
+  m_LocalPosition: {x: 0.181, y: 0.049000025, z: 0}
   m_LocalScale: {x: 0.22317886, y: 0.50300384, z: 0.010514157}
   m_Children: []
   m_Father: {fileID: 1037929357}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.842001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.403}
 --- !u!23 &359863482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3229,7 +3282,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3b3b42404fefa8e4e860b57acdb908c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5651,6 +5704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579471376}
   - component: {fileID: 579471377}
+  - component: {fileID: 579471378}
   m_Layer: 0
   m_Name: Step 16 & 17, 21 & 22
   m_TagString: Untagged
@@ -5689,6 +5743,29 @@ MonoBehaviour:
     Then flame the inoculation loop over the bunsen burner again.
   hasInstruction: 0
   deactivateAfterDone: 0
+--- !u!114 &579471378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579471375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edf01bacadb01a49ba236c160071389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
+  tableCloth: {fileID: 0}
+  bunsenBurner: {fileID: 0}
+  strikingRod: {fileID: 0}
+  cultureTube: {fileID: 0}
+  cultureContact: {fileID: 0}
+  petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
+  petridishStrikePanel: {fileID: 0}
+  burnerFire: {fileID: 7758029764997441029}
 --- !u!1 &581327287
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,6 +5970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597555940}
   - component: {fileID: 597555941}
+  - component: {fileID: 597555942}
   m_Layer: 0
   m_Name: Step 5 & 6a & 7 & 8
   m_TagString: Untagged
@@ -5934,6 +6012,29 @@ MonoBehaviour:
   - Grab the culture tube using the palm button.
   hasInstruction: 0
   deactivateAfterDone: 0
+--- !u!114 &597555942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597555939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edf01bacadb01a49ba236c160071389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
+  tableCloth: {fileID: 0}
+  bunsenBurner: {fileID: 0}
+  strikingRod: {fileID: 0}
+  cultureTube: {fileID: 5368389}
+  cultureContact: {fileID: 0}
+  petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
+  petridishStrikePanel: {fileID: 0}
+  burnerFire: {fileID: 0}
 --- !u!1 &603043991
 GameObject:
   m_ObjectHideFlags: 0
@@ -5945,8 +6046,6 @@ GameObject:
   - component: {fileID: 603043992}
   - component: {fileID: 603043994}
   - component: {fileID: 603043993}
-  - component: {fileID: 603043995}
-  - component: {fileID: 603043996}
   m_Layer: 0
   m_Name: PetriDish(StrikePanel)
   m_TagString: SnapCube
@@ -5962,7 +6061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603043991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.022, y: 1.048, z: -5.578}
+  m_LocalPosition: {x: -0.022, y: 1.724, z: -5.578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 819843272}
@@ -5999,7 +6098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530b947cebdc8f0478f217fc1d61a932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableObject: {fileID: 603043995}
   lineMat: {fileID: 2100000, guid: 9079ff3a63108834ba42a5ff74035e19, type: 2}
   allLines: {fileID: 1167006881}
   linePrefab: {fileID: 1490754362116442993, guid: b43557a8925b53d438d64a2a4010eb49,
@@ -6030,55 +6128,6 @@ MonoBehaviour:
     maxX: 0.385
     minY: -0.323
     maxY: 0
---- !u!114 &603043995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603043991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 0
-  holdButtonToGrab: 0
-  stayGrabbedOnTeleport: 0
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
-  secondaryGrabActionScript: {fileID: 0}
-  isUsable: 1
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 1
-  useOverrideButton: 3
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
---- !u!54 &603043996
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603043991}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1001 &610410838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6492,6 +6541,7 @@ Transform:
   - {fileID: 5006512736226586870}
   - {fileID: 63932113}
   - {fileID: 1668910923}
+  - {fileID: 1922566006}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6521,7 +6571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665876430}
   m_LocalRotation: {x: -0, y: -0, z: 0.012580414, w: 0.9999209}
-  m_LocalPosition: {x: 0.063, y: -0.09799999, z: -0.0069999695}
+  m_LocalPosition: {x: -0.082, y: -0.063, z: 0}
   m_LocalScale: {x: 0.37560695, y: 0.41339418, z: 0.008641072}
   m_Children: []
   m_Father: {fileID: 1037929357}
@@ -6544,7 +6594,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3b3b42404fefa8e4e860b57acdb908c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6573,6 +6623,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665876430}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &677844689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 677844690}
+  - component: {fileID: 677844691}
+  m_Layer: 0
+  m_Name: Step 31 (Close NA Plate Here)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &677844690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677844689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 964778102}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677844691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677844689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53eae7e3c08f0d345861b6fc01c9d7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionText:
+  - Close the NA plate by clicking on the palm button on the hand holding on the plate.
+  hasInstruction: 0
+  deactivateAfterDone: 0
 --- !u!1 &683369207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6813,7 +6910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   steps:
   - {fileID: 1450186007}
-  - {fileID: 1621073309}
+  - {fileID: 1922566009}
   - {fileID: 1515520300739435}
   - {fileID: 1230139290}
   - {fileID: 1230139290}
@@ -6829,11 +6926,25 @@ MonoBehaviour:
   - {fileID: 1668910924}
   - {fileID: 1668910924}
   - {fileID: 579471377}
+  - {fileID: 63932115}
   - {fileID: 1668910924}
   - {fileID: 1668910924}
+  - {fileID: 1598609711}
+  - {fileID: 1598609711}
   - {fileID: 579471377}
+  - {fileID: 63932115}
   - {fileID: 1668910924}
   - {fileID: 1668910924}
+  - {fileID: 1598609711}
+  - {fileID: 1598609711}
+  - {fileID: 579471377}
+  - {fileID: 63932115}
+  - {fileID: 1668910924}
+  - {fileID: 1668910924}
+  - {fileID: 1598609711}
+  - {fileID: 1598609711}
+  - {fileID: 317127731}
+  - {fileID: 677844691}
   processCanvas: {fileID: 960894714}
 --- !u!1 &705507993
 GameObject:
@@ -8338,8 +8449,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1737446, y: 0.16524097, z: 0.03213778}
-  m_Center: {x: 0, y: -2.2835264e-16, z: 0.01606889}
+  m_Size: {x: 0.1737446, y: 0.16524097, z: 0.012644649}
+  m_Center: {x: 0, y: 0, z: -0.007692039}
 --- !u!23 &819843274
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10374,8 +10485,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionText:
   - Touch the NA plate with the rod to begin streaking.
+  - Touch the NA plate with the rod to begin streaking.
+  - Touch the NA plate with the rod to begin streaking.
+  - Touch the NA plate with the rod to begin streaking.
   hasInstruction: 0
-  deactivateAfterDone: 0
+  deactivateAfterDone: 1
 --- !u!114 &927222654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11336,6 +11450,9 @@ Transform:
   - {fileID: 1621073308}
   - {fileID: 597555940}
   - {fileID: 579471376}
+  - {fileID: 677844690}
+  - {fileID: 1598609710}
+  - {fileID: 317127730}
   m_Father: {fileID: 635048767}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11365,7 +11482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969884225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0.17700005, z: -0.0069999695}
+  m_LocalPosition: {x: -0.25, y: 0.143, z: 0}
   m_LocalScale: {x: 0.061816122, y: 0.05563451, z: 0.0023549}
   m_Children: []
   m_Father: {fileID: 1037929357}
@@ -11388,7 +11505,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3b3b42404fefa8e4e860b57acdb908c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11966,6 +12083,7 @@ MonoBehaviour:
   - {fileID: 293145758}
   - {fileID: 665876430}
   sideSpot: {fileID: 969884225}
+  lastSector: {fileID: 293145758}
 --- !u!4 &1048959683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3c4f198a962b2a3448a82a0b421cf368,
@@ -11997,13 +12115,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091747358}
-  m_LocalRotation: {x: -0, y: -0, z: 0.22022954, w: 0.9754481}
-  m_LocalPosition: {x: -0.159, y: -0.083000004, z: -0.0069999695}
+  m_LocalRotation: {x: -0, y: -0, z: -0.22058977, w: 0.9753667}
+  m_LocalPosition: {x: 0.157, y: -0.082999945, z: 0}
   m_LocalScale: {x: 0.22317883, y: 0.50300384, z: 0.010514157}
   m_Children: []
   m_Father: {fileID: 1037929357}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.445002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.487001}
 --- !u!23 &1091747360
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12021,7 +12139,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3b3b42404fefa8e4e860b57acdb908c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12935,7 +13053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167006880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 603043992}
@@ -13309,7 +13427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194465049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.009, y: 0.18200004, z: -0.0069999695}
+  m_LocalPosition: {x: -0.009, y: 0.18200004, z: 0}
   m_LocalScale: {x: 0.4354709, y: 0.24839695, z: 0.010514157}
   m_Children: []
   m_Father: {fileID: 1037929357}
@@ -13332,7 +13450,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3b3b42404fefa8e4e860b57acdb908c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13547,11 +13665,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
   tableCloth: {fileID: 0}
   bunsenBurner: {fileID: 1230139287}
   strikingRod: {fileID: 0}
   cultureTube: {fileID: 0}
+  cultureContact: {fileID: 0}
   petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
   petridishStrikePanel: {fileID: 0}
   burnerFire: {fileID: 0}
 --- !u!114 &1230139289
@@ -14400,11 +14521,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
   tableCloth: {fileID: 0}
   bunsenBurner: {fileID: 0}
   strikingRod: {fileID: 1405490319}
   cultureTube: {fileID: 0}
+  cultureContact: {fileID: 0}
   petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
   petridishStrikePanel: {fileID: 0}
   burnerFire: {fileID: 7758029764997441029}
 --- !u!114 &1405490323
@@ -14865,11 +14989,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glove: {fileID: 1450186005}
+  sprayBottle: {fileID: 0}
   tableCloth: {fileID: 0}
   bunsenBurner: {fileID: 0}
   strikingRod: {fileID: 0}
   cultureTube: {fileID: 0}
+  cultureContact: {fileID: 0}
   petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
   petridishStrikePanel: {fileID: 0}
   burnerFire: {fileID: 0}
 --- !u!114 &1450186007
@@ -16996,6 +17123,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589978928}
   m_Mesh: {fileID: 1249396026732042720, guid: c4044df738d0084438dd3736ffdee3f8, type: 3}
+--- !u!1 &1598609709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598609710}
+  - component: {fileID: 1598609711}
+  m_Layer: 0
+  m_Name: Step 20,24,29
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1598609710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598609709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 964778102}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598609711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598609709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53eae7e3c08f0d345861b6fc01c9d7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionText:
+  - Streak a few times across the SECOND sector of the plate. Refer to the highlighted
+    area.
+  - To streak on the plate. Press on to the thumb toggle thumb with the hand holding
+    on the inoculation rod. A laser will appear.Then press on the index button to
+    start and stop streaking.
+  - Streak a few times across the THIRD sector of the plate. Refer to the highlighted
+    area.
+  - To streak on the plate. Press on to the thumb toggle thumb with the hand holding
+    on the inoculation rod. A laser will appear.Then press on the index button to
+    start and stop streaking.
+  - Streak a few times across the FOURTH sector of the plate. Refer to the highlighted
+    area.
+  - To streak on the plate. Press on to the thumb toggle thumb with the hand holding
+    on the inoculation rod. A laser will appear.Then press on the index button to
+    start and stop streaking.
+  hasInstruction: 0
+  deactivateAfterDone: 0
 --- !u!1 &1613226681
 GameObject:
   m_ObjectHideFlags: 0
@@ -17210,8 +17398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionText:
-  - 'Make sure you sanitize your work area before you start the experiment. Tap on
-    the alcohol spray bottle to spray the alcohol at your work area. '
+  - 
   hasInstruction: 0
   deactivateAfterDone: 0
 --- !u!1 &1621755614
@@ -17536,6 +17723,16 @@ MonoBehaviour:
   - To streak on the plate. Press on to the thumb toggle thumb with the hand holding
     on the inoculation rod. A laser will appear.Then press on the index button to
     start and stop streaking.
+  - Cool the loop for a few seconds by stabbing into an agar at the highlighted side
+    of an NA plate.
+  - To streak on the plate. Press on to the thumb toggle thumb with the hand holding
+    on the inoculation rod. A laser will appear.Then press on the index button to
+    start and stop streaking.
+  - Cool the loop for a few seconds by stabbing into an agar at the highlighted side
+    of an NA plate.
+  - To streak on the plate. Press on to the thumb toggle thumb with the hand holding
+    on the inoculation rod. A laser will appear.Then press on the index button to
+    start and stop streaking.
   hasInstruction: 0
   deactivateAfterDone: 0
 --- !u!114 &1668910925
@@ -17551,11 +17748,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
   tableCloth: {fileID: 0}
   bunsenBurner: {fileID: 0}
   strikingRod: {fileID: 0}
   cultureTube: {fileID: 0}
+  cultureContact: {fileID: 0}
   petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
   petridishStrikePanel: {fileID: 603043991}
   burnerFire: {fileID: 0}
 --- !u!1 &1693225862
@@ -18898,6 +19098,169 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1737446, y: 0.16524097, z: 0.03213778}
   m_Center: {x: 0, y: -2.2835264e-16, z: 0.01606889}
+--- !u!1 &1922566005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1922566006}
+  - component: {fileID: 1922566012}
+  - component: {fileID: 1922566011}
+  - component: {fileID: 1922566010}
+  - component: {fileID: 1922566009}
+  - component: {fileID: 1922566008}
+  - component: {fileID: 1922566007}
+  m_Layer: 0
+  m_Name: Spray Bottle (Step 2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1922566006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922566005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5615, y: 0.829, z: -0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5006512735358385707}
+  m_Father: {fileID: 635048767}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922566007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922566005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7513d129ae69be4aa1810bb75c2752c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprayAnim: {fileID: 8296172668631616570}
+  isOn: 0
+--- !u!114 &1922566008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922566005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edf01bacadb01a49ba236c160071389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
+  tableCloth: {fileID: 0}
+  bunsenBurner: {fileID: 0}
+  strikingRod: {fileID: 0}
+  cultureTube: {fileID: 0}
+  cultureContact: {fileID: 0}
+  petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
+  petridishStrikePanel: {fileID: 0}
+  burnerFire: {fileID: 0}
+--- !u!114 &1922566009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922566005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53eae7e3c08f0d345861b6fc01c9d7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionText:
+  - 'Make sure you sanitize your work area before you start the experiment. Tap on
+    the alcohol spray bottle to spray the alcohol at your work area. '
+  hasInstruction: 0
+  deactivateAfterDone: 0
+--- !u!114 &1922566010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922566005}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08517e04830d6d44a13c5ea5f574181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  unhighlightOnDisable: 1
+  thickness: 0.5
+  customOutlineModels:
+  - {fileID: 0}
+  customOutlineModelPaths: []
+  enableSubmeshHighlight: 0
+--- !u!114 &1922566011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922566005}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0.43137255, g: 0.68235296, b: 0.7882353, a: 0}
+  touchHighlight: {r: 0.94509804, g: 0.63529414, b: 0.03137255, a: 0}
+  grabHighlight: {r: 0.9450981, g: 0.63529414, b: 0.03137255, a: 1}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
+--- !u!114 &1922566012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922566005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 0
+  stayGrabbedOnTeleport: 0
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 0
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
 --- !u!1001 &1944848240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20795,11 +21158,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
   tableCloth: {fileID: 114040263653841167}
   bunsenBurner: {fileID: 0}
   strikingRod: {fileID: 0}
   cultureTube: {fileID: 0}
+  cultureContact: {fileID: 0}
   petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
   petridishStrikePanel: {fileID: 0}
   burnerFire: {fileID: 0}
 --- !u!114 &1515520300739435
@@ -29435,6 +29801,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!4 &1445244409500555584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7367846700355707267}
+  m_LocalRotation: {x: 0.7070378, y: -0.0098910965, z: 0.00989106, w: 0.7070374}
+  m_LocalPosition: {x: 0.0123166675, y: -0.0000006943912, z: 0.047413614}
+  m_LocalScale: {x: 0.009208378, y: 0.0092083765, z: 0.00920838}
+  m_Children: []
+  m_Father: {fileID: 7804833134290803959}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450639707259200499
 GameObject:
   m_ObjectHideFlags: 0
@@ -34535,6 +34915,14 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!33 &2080180372653644257
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847354607761693317}
+  m_Mesh: {fileID: 2108668829943745726, guid: 6d9e2f527bd8479419b5bcd694beb2b3, type: 3}
 --- !u!4 &2080951671163572149
 Transform:
   m_ObjectHideFlags: 0
@@ -36085,6 +36473,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!4 &2309819389142319510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3638214176302956336}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0069140876, y: -0.00000069379803, z: -0.060895283}
+  m_LocalScale: {x: 0.83271724, y: 0.83271724, z: 1.3463479}
+  m_Children: []
+  m_Father: {fileID: 7804833134290803959}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2310698947910453656
 GameObject:
   m_ObjectHideFlags: 0
@@ -40727,6 +41129,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!33 &2963158803527058373
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7367846700355707267}
+  m_Mesh: {fileID: -3784328038714251642, guid: 6d9e2f527bd8479419b5bcd694beb2b3, type: 3}
 --- !u!23 &2966066916260945146
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45464,6 +45874,22 @@ Transform:
   m_Father: {fileID: 1828970035915564953}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3638214176302956336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2309819389142319510}
+  m_Layer: 0
+  m_Name: DIO water bottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!23 &3642455686429656453
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55617,6 +56043,21 @@ Transform:
   m_Father: {fileID: 63932113}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &5006512735358385707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172668631616568}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7804833134290803959}
+  m_Father: {fileID: 1922566006}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5006512736226586870
 Transform:
   m_ObjectHideFlags: 0
@@ -57592,6 +58033,22 @@ Transform:
   m_Father: {fileID: 5006512735011748098}
   m_RootOrder: 154
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5349333214956340933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7804833134290803959}
+  m_Layer: 0
+  m_Name: spray bottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &5355606768839450862
 Transform:
   m_ObjectHideFlags: 0
@@ -65610,6 +66067,44 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!23 &6583745326606707428
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7367846700355707267}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 507964552181651666, guid: 6d9e2f527bd8479419b5bcd694beb2b3, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &6585755566364521527
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71869,6 +72364,24 @@ Transform:
   m_Father: {fileID: 543717698239535371}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7367846700355707267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1445244409500555584}
+  - component: {fileID: 2963158803527058373}
+  - component: {fileID: 6583745326606707428}
+  m_Layer: 0
+  m_Name: Spray bottle_clicker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &7371122011853672470
 Transform:
   m_ObjectHideFlags: 0
@@ -72818,6 +73331,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!4 &7493414161228043697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847354607761693317}
+  m_LocalRotation: {x: -0.000009059907, y: 1.3686178e-13, z: -0.000000015106313, w: 1}
+  m_LocalPosition: {x: -0.0069140876, y: -0.00000069379803, z: -0.060895283}
+  m_LocalScale: {x: 0.83787185, y: 0.83787143, z: 1.2839954}
+  m_Children: []
+  m_Father: {fileID: 7804833134290803959}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &7494409273664400384
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79339,6 +79866,23 @@ Transform:
   m_Father: {fileID: 1256202398412668624}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &7804833134290803959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349333214956340933}
+  m_LocalRotation: {x: -0.7059696, y: 0.04008787, z: 0.04008787, w: 0.7059696}
+  m_LocalPosition: {x: 0.0075246, y: 0.067, z: -0.000046965}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children:
+  - {fileID: 2309819389142319510}
+  - {fileID: 1445244409500555584}
+  - {fileID: 7493414161228043697}
+  m_Father: {fileID: 5006512735358385707}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7817740198050218057
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79614,6 +80158,24 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!1 &7847354607761693317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7493414161228043697}
+  - component: {fileID: 2080180372653644257}
+  - component: {fileID: 8349552896577318561}
+  m_Layer: 0
+  m_Name: SprayBottle_body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!33 &7847555785093979272
 MeshFilter:
@@ -82798,11 +83360,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glove: {fileID: 0}
+  sprayBottle: {fileID: 0}
   tableCloth: {fileID: 0}
   bunsenBurner: {fileID: 0}
   strikingRod: {fileID: 0}
-  cultureTube: {fileID: 5368389}
+  cultureTube: {fileID: 0}
+  cultureContact: {fileID: 9210451439855140898}
   petridish: {fileID: 0}
+  petridishCover: {fileID: 0}
   petridishStrikePanel: {fileID: 0}
   burnerFire: {fileID: 0}
 --- !u!114 &8296172668308669159
@@ -82822,6 +83387,56 @@ MonoBehaviour:
     has collected the culture.
   hasInstruction: 0
   deactivateAfterDone: 1
+--- !u!1 &8296172668631616568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5006512735358385707}
+  - component: {fileID: 8296172668631616569}
+  - component: {fileID: 8296172668631616570}
+  m_Layer: 0
+  m_Name: botol_spray_Alc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &8296172668631616569
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172668631616568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.14804882, z: 0.058251917}
+  m_Center: {x: 0, y: 0.0657725, z: -0.0027227104}
+--- !u!95 &8296172668631616570
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172668631616568}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52f4e2ac01a145d4d81216668a6bbb32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8296172668987558673
 GameObject:
   m_ObjectHideFlags: 0
@@ -82895,8 +83510,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 4
+  MinDistance: 0.1
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -83208,6 +83823,44 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!23 &8349552896577318561
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847354607761693317}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e31f9ead185b30c4abbee6df9a65a1cf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!33 &8354709674825007854
 MeshFilter:
   m_ObjectHideFlags: 0

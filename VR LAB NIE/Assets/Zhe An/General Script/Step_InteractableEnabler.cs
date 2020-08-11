@@ -3,17 +3,20 @@ using VRTK;
 public class Step_InteractableEnabler : MonoBehaviour
 {
     [SerializeField] private GloveInteraction glove;
+    [SerializeField] private Spray_Bottle sprayBottle;
     [SerializeField] private VRTK_InteractableObject tableCloth;
     [SerializeField] private BunsenBurnerControl bunsenBurner;
     [SerializeField] private VRTK_InteractableObject strikingRod;
     [SerializeField] private CultureTube cultureTube;
+    [SerializeField] private CultureContactWithInnoculationTube cultureContact;
     [SerializeField] private VRTK_InteractableObject petridish;
+    [SerializeField] private PetridishCover petridishCover;
     [SerializeField] private GameObject petridishStrikePanel;
     [SerializeField] private BurnerFire burnerFire;
 
     private void Start()
     {
-        //DisableInteract();
+        DisableInteract();
     }
 
     public void EnableInteract()
@@ -22,6 +25,10 @@ public class Step_InteractableEnabler : MonoBehaviour
         {
             glove.enabled = true;
         }
+        if (sprayBottle)
+        {
+            sprayBottle.enabled = true;
+        }
         if (tableCloth)
         {
             tableCloth.isGrabbable = true;
@@ -29,6 +36,10 @@ public class Step_InteractableEnabler : MonoBehaviour
         if (bunsenBurner)
         {
             bunsenBurner.enabled = true;
+        }
+        if (cultureContact)
+        {
+            cultureContact.enabled = true;
         }
         if (strikingRod)
         {
@@ -41,6 +52,10 @@ public class Step_InteractableEnabler : MonoBehaviour
         if (petridish)
         {
             petridish.isGrabbable = true;
+        }
+        if (petridishCover)
+        {
+            petridishCover.enabled = true;
         }
         if (petridishStrikePanel)
         {
@@ -58,6 +73,10 @@ public class Step_InteractableEnabler : MonoBehaviour
         {
             glove.enabled = false;
         }
+        if (sprayBottle)
+        {
+            sprayBottle.enabled = false;
+        }
         if (tableCloth)
         {
             tableCloth.isGrabbable = false;
@@ -70,6 +89,10 @@ public class Step_InteractableEnabler : MonoBehaviour
         {
             strikingRod.isGrabbable = false;
         }
+        if (cultureContact)
+        {
+            cultureContact.enabled = false;
+        }
         if (cultureTube)
         {
             cultureTube.enabled = false;
@@ -77,6 +100,10 @@ public class Step_InteractableEnabler : MonoBehaviour
         if (petridish)
         {
             petridish.isGrabbable = false;
+        }
+        if (petridishCover)
+        {
+            petridishCover.enabled = false;
         }
         if (petridishStrikePanel)
         {

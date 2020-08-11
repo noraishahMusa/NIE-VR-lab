@@ -30,7 +30,7 @@ public class CultureContactWithInnoculationTube : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("culture tube is enabled");
+        //Debug.Log("culture tube is enabled");
         isHoldingStrikeRod = false;
         
     }
@@ -40,7 +40,7 @@ public class CultureContactWithInnoculationTube : MonoBehaviour
         if (isHoldingStrikeRod) return;
         if (GetNameOfGrabObjects.leftGrabbedItem == strikeRod || GetNameOfGrabObjects.rightGrabbedItem == strikeRod)
         {
-            Debug.Log("strike rod is held on");
+            //Debug.Log("strike rod is held on");
             coll.enabled = true;
             isHoldingStrikeRod = true;
         }
@@ -49,16 +49,16 @@ public class CultureContactWithInnoculationTube : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other + " is colliding with culture tube" + strikeRodTipTrans);
+        //Debug.Log(other + " is colliding with culture tube" + strikeRodTipTrans);
         if(other.transform == strikeRodTipTrans)
         {
             strikeRodTip.enabled = true;
             strikeRodTip.material.color = Color.Lerp(strikeRodTipOriginalColor, Color.green, timer/2);
-            Debug.Log("strike rod is collided with");
+            //Debug.Log("strike rod is collided with");
             timer += Time.deltaTime;
             if (strikeRodTip.material.color == Color.green)
             {
-                Debug.Log("culture has been collected");
+                //Debug.Log("culture has been collected");
                 CultureCollected();
                 coll.enabled = false;
             }

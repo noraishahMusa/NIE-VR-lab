@@ -6,16 +6,22 @@ public class PetridishCover : MonoBehaviour
     //for dev purpose: delete after done
     //[SerializeField] private Text text;
     [SerializeField] private GameObject petridishPanel;
+    private bool triggerOnStep;
+    private void OnEnable()
+    {
+        triggerOnStep = true;
+    }
 
-    // Start is called before the first frame update
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "strike rod")
+        if (other.name == "strike rod" && triggerOnStep)
         {
 
             //set petridish panel on with step control
+            Debug.Log("trigger on petridish cover");
             FindObjectOfType<StepControl>().DoNextStep();
+            triggerOnStep = false;
         } 
     }
 

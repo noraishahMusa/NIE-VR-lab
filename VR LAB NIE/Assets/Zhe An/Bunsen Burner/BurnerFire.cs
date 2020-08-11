@@ -37,7 +37,7 @@ public class BurnerFire : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("culture tube is enabled");
+        //Debug.Log("culture tube is enabled");
         isHoldingStrikeRod = false;
     }
 
@@ -46,7 +46,7 @@ public class BurnerFire : MonoBehaviour
         if (isHoldingStrikeRod) return;
         if (GetNameOfGrabObjects.leftGrabbedItem == strikeRod || GetNameOfGrabObjects.rightGrabbedItem == strikeRod)
         {
-            Debug.Log("strike rod is held on");
+            //Debug.Log("strike rod is held on");
             coll.enabled = true;
             isHoldingStrikeRod = true;
         }
@@ -62,7 +62,7 @@ public class BurnerFire : MonoBehaviour
             timer += Time.deltaTime;
             if (strikeRodTip.material.color == Color.red)
             {
-                Debug.Log("rod has been heated");
+                //Debug.Log("rod has been heated");
                 RodHeated();
                 coll.enabled = false;
             }
@@ -73,6 +73,7 @@ public class BurnerFire : MonoBehaviour
     private void RodHeated()
     {
         FindObjectOfType<StepControl>().DoNextStep();
+        timer = 0;
         this.enabled = false;
 
     }

@@ -6,7 +6,6 @@ using VRTK;
 
 public class StrikingLine_Drawer : MonoBehaviour
 {
-    [SerializeField] private VRTK_InteractableObject interactableObject;
     private LineRenderer line;
     [SerializeField] private Material lineMat;
     [SerializeField] private Transform allLines;
@@ -21,11 +20,11 @@ public class StrikingLine_Drawer : MonoBehaviour
 
     private bool itemsOnHand;
     private bool activate;
+    private bool completeStep;
 
 
     private void OnEnable()
     {
-        Debug.Log("enable strike panel");
         sectorControl.enabled = true;
     }
 
@@ -36,7 +35,7 @@ public class StrikingLine_Drawer : MonoBehaviour
 
     private void UpdateForLeftRightGrabbedItems()
     {
-        Debug.Log(GetNameOfGrabObjects.rightGrabbedItem + " " + GetNameOfGrabObjects.leftGrabbedItem);
+        //Debug.Log(GetNameOfGrabObjects.rightGrabbedItem + " " + GetNameOfGrabObjects.leftGrabbedItem);
         if (GetNameOfGrabObjects.rightGrabbedItem == null || GetNameOfGrabObjects.leftGrabbedItem == null)
         {
             DeactivateStrikingPanel();
@@ -58,7 +57,7 @@ public class StrikingLine_Drawer : MonoBehaviour
     {
 
         controllerPointer = GetNameOfGrabObjects.strikeRodPointer;
-        Debug.Log(controllerPointer);
+        //Debug.Log(controllerPointer);
         controllerPointer.SelectionButtonPressed += StartStrike;
         controllerPointer.SelectionButtonReleased += StopStrike;
         sectorControl.DoNextSequence();
@@ -70,7 +69,25 @@ public class StrikingLine_Drawer : MonoBehaviour
     {
         Debug.Log("stop strike");
         activate = false;
-        DeactivateStrikingPanel();
+        bool sideSpot = Strike_SectorControl.isSideSpot;
+        bool lastSpot = Strike_SectorControl.isLastSector;
+        if (!completeStep) return;
+        if (sideSpot || lastSpot)
+        {
+            sectorControl.DoNextSequence();
+            positionA = Vector3.zero;
+            if (line) line = null;
+            completeStep = false;
+            linePositions.Clear();
+            FindObjectOfType<StepControl>().DoNextStep();
+            return;
+
+        } else
+        {
+            DeactivateStrikingPanel();
+        }
+
+
     }
 
     private void StartStrike(object sender, ControllerInteractionEventArgs e)
@@ -88,16 +105,25 @@ public class StrikingLine_Drawer : MonoBehaviour
         controllerPointer.DestinationMarkerHover -= HoveringOverStrikePanel;
         itemsOnHand = false;
         positionA = Vector3.zero;
-        if (line) Destroy(line);
+        if (line) line = null;
         linePositions.Clear();
         controllerPointer = null;
+        completeStep = false;
         this.gameObject.SetActive(false);
+
+        //change current section to the next one
+        
+
+        //GoToNextStep
+        FindObjectOfType<StepControl>().DoNextStep();
     }
 
     private void HoveringOverStrikePanel(object sender, DestinationMarkerEventArgs e)
     {
-        if (e.target.name == "PetriDish(StrikePanel)" && activate)
+        //Debug.Log(e.target.name);
+        if (e.target.name == "Plate" && activate)
         {
+
             DrawLine(e.destinationPosition);
         }
 
@@ -110,7 +136,7 @@ public class StrikingLine_Drawer : MonoBehaviour
 
     private void DrawLine(Vector3 pos)
     {
-        if (positionA == Vector3.zero)
+        if (!line)
         {
             Debug.Log("create line");
             GameObject lineObj = Instantiate(linePrefab, allLines);
@@ -145,24 +171,21 @@ public class StrikingLine_Drawer : MonoBehaviour
 
     private void CheckLineIfInSection()
     {
-        Debug.Log(linePositions.Count + " total number of line positions");
+        //Debug.Log(line.positionCount + " total number of line positions");
         if (Strike_SectorControl.isSideSpot)
         {
-            if(linePositions.Count > 5)
+            if(line.positionCount > 10)
             {
-                strikeRodTip.enabled = false;
-                //considered as finished
-                FindObjectOfType<StepControl>().DoNextStep();
-                DeactivateStrikingPanel();
+                Debug.Log("side spot line position count");
+                completeStep = true;
             }
         } else
         {
-            if (linePositions.Count > 50)
+            if (line.positionCount > 200)
             {
-                strikeRodTip.enabled = false;
-                //considered as finish strike
-                FindObjectOfType<StepControl>().DoNextStep();
-                DeactivateStrikingPanel();
+                Debug.Log("non side spot line position count");
+                completeStep = true;
+
             }
         }
 

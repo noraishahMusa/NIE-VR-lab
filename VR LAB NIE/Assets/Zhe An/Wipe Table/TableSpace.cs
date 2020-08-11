@@ -59,21 +59,21 @@ public class TableSpace : MonoBehaviour
                 if(t.GetPixel(x,y) == clear)
                 {
                     cleanedCount++;
-                    Debug.Log("area cleaned");
+                    //Debug.Log("area cleaned");
                     hasZoneNotCovered = true;
                 }
             }
         }
         if (!hasZoneNotCovered)
         {
-            Debug.Log("All is black");
+            //Debug.Log("All is black");
         } else
         {
             float percent = (cleanedCount / pixelAmt) * 100;
-            Debug.Log(percent + " has been covered");
-            if(percent > 45)
+            //Debug.Log(percent + " has been covered");
+            if(percent > 42)
             {
-                Debug.Log(percent + " is greater than 50. Hence table is cleaned.");
+                //Debug.Log(percent + " is greater than 42. Hence table is cleaned.");
                 //GoToNextStepUsingStepControl//
                 FindObjectOfType<StepControl>().DoNextStep();
             }

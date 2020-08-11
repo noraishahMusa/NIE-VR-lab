@@ -39,7 +39,7 @@ public class BunsenBurnerControl : MonoBehaviour
 
     private void TouchObject(object sender, InteractableObjectEventArgs e)
     {
-        Debug.Log(e.interactingObject.name + " touch object");
+        //Debug.Log(e.interactingObject.name + " touch object");
         VRTK_InteractGrab iGrab = e.interactingObject.GetComponent<VRTK.VRTK_InteractGrab>();
         if (iGrab.GetGrabbedObject() != null)
             return;
